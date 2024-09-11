@@ -1,5 +1,5 @@
 
 document.addEventListener 'turbolinks:load', (event) ->
-  if typeof ga is 'function'
-    ga('set', 'location', event.data.url)
-    ga('send', 'pageview')
+  if typeof gtag is 'function'
+    // with ga4, it is not necessary to call gtag
+    // gtag('event', 'page_view');

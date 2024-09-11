@@ -124,7 +124,7 @@ wait
 # wrap things up: make a gzipped version of what was loaded
 ##############################################################################
 # get rid of intermediate files
-rm -f temp*.csv t?.*.csv d?.csv m?.csv part*.csv schema*.xml header4Solr.csv public.csv internal.csv
+rm -f temp*.csv temp.sql t?.*.csv d?.csv m?.csv part*.csv schema*.xml header4Solr.csv public.csv internal.csv
 # zip up .csvs, save a bit of space on backups
 gzip -f 4solr.*.csv
 date

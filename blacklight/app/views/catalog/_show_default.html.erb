@@ -55,9 +55,12 @@
   </div>
   <div id="feedback" class="col-sm-12 col-md-11">
     <% _idnumber_s = doc_presenter.document['id'] %>
-    <% _objectnumber_s = ('' || doc_presenter.document['objectnumber_s']) %>
-    <% _objectname_ss = ([] || doc_presenter.document['objectname_ss']).join(', ') %>
-    <% _object_url = "http://10.161.2.193:9090/catalog/" + _idnumber_s %>
+    <% _objectnumber_s = doc_presenter.document['objectnumber_s'] %>
+    <% _objectname_ss = '' %>
+    <% if doc_presenter.document['objectname_ss'] %>
+      <% _objectname_ss = doc_presenter.document['objectname_ss'].join(', ') %>
+    <% end %>
+    <% _object_url = "https://portal.museumca.org/catalog/" + _idnumber_s %>
     The examination and research of objects within OMCA’s collection is ongoing.
     If you have comments, additional information, or questions about this object record, we welcome your feedback.
     <a href="mailto:onlinecollection@museumca.org?subject=About object <%= _objectnumber_s %>:

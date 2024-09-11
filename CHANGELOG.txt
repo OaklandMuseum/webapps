@@ -3,10 +3,29 @@ CHANGELOG for webapps
 OK, it is not a *real* change log, but a list of changes resulting from git log
 sometimes with some human annotation after the fact.
 
-This is version blacklight-1.0.0
-Tue Aug 27 13:49:44 PDT 2024
+This is version blacklight-1.0.1
+Sat Sep  7 09:31:46 PDT 2024
 
-eb3d204 (HEAD -> main, tag: blacklight-1.0.0-rc1, origin/main, origin/HEAD) revise CHANGELOG.txt and bump version to blacklight-1.0.0-rc1
+8b3884c (HEAD -> main, tag: webapps-6.1.4, origin/main, origin/HEAD) revise CHANGELOG.txt and bump version to webapps-6.1.4
+f149c65 (tag: webapps-6.1.4-rc1) revise CHANGELOG.txt and bump version to webapps-6.1.4-rc1
+c1434cc (tag: blacklight-1.0.1-rc2) revise CHANGELOG.txt and bump version to blacklight-1.0.1-rc2
+854083e adding a useful helper script for Solr
+4f797a7 update README.md for both webapps and solr
+b2b7150 (tag: blacklight-1.0.1-rc1) revise CHANGELOG.txt and bump version to blacklight-1.0.1-rc1
+b14d5a7 make our own copy of make-release.pl
+086537f hypenate Margaret Terrazas-Santos' name properly in blacklight grid page
+a164f3a solr pipeline should get rid of temp file when done
+4444e1a use omca s3 bucket name for image syncs
+f583b97 fix undetected error when object has no object name; also set cdn hostname
+ebcf864 use omca's cdn hostname for serving images in blacklight portal
+36ab9bf Merge pull request #6 from OaklandMuseum/main
+17a9590 Merge pull request #12 from jblowe/main
+4dd7f25 update crontab to run s3 image sync nightly
+8d09666 add link to s3 image update log to webapps landing page
+129d839 minor refactoring of django webapps landing app to present correct (omca) links
+60f76ae initial commit of s3 image sync apparatus (for portal images)
+0f6abf7 (tag: blacklight-1.0.0) revise CHANGELOG.txt and bump version to blacklight-1.0.0
+eb3d204 (tag: blacklight-1.0.0-rc1) revise CHANGELOG.txt and bump version to blacklight-1.0.0-rc1
 a52b006 (tag: webapps-6.1.3) revise CHANGELOG.txt and bump version to webapps-6.1.3
 ed6bb56 (tag: webapps-6.1.3-rc1) revise CHANGELOG.txt and bump version to webapps-6.1.3-rc1
 8334cb6 tidy up code in solr pipeline was deleting some needed files

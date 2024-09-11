@@ -3,7 +3,7 @@
 # find the new blobs and sync them to s3
 #
 LOCAL_CACHE=/var/www/html/images
-S3_BUCKET=s3://omca-thumbnails/thumbnails
+S3_BUCKET=s3://omca-media/thumbnails
 UPDATE_LOG=/var/www/html/s3_update.log
 
 echo "s3 image update started $(date)" > ${UPDATE_LOG}

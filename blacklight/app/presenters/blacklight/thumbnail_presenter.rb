@@ -51,7 +51,7 @@ module Blacklight
       value = if thumbnail_method
                 view_context.send(thumbnail_method, document, image_options)
               elsif thumbnail_field
-                image_url = 'https://d2kpp6rxorzl4e.cloudfront.net/thumbnails/' + thumbnail_value_from_document +  '.jpg'
+                image_url = 'https://d6jfg2a0yiapu.cloudfront.net/thumbnails/' + thumbnail_value_from_document +  '.jpg'
                 # image_url = '/blobs/' + thumbnail_value_from_document + '/derivatives/Medium/content'
                 image_options[:width] = '360px'
                 view_context.image_tag image_url, image_options if image_url.present?

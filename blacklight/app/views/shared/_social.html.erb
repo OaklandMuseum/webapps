@@ -6,7 +6,7 @@
   <% if doc_presenter.document['title_ss'] %>
     <% doc_title = doc_presenter.document['title_ss'].join(', ') %>
     <meta property="og:title"     content="<%= doc_presenter.document['title_ss'].join(', ') %>" />
-  <% else %>
+  <% elsif doc_presenter.document['objectname_ss'] %>
     <% doc_title = doc_presenter.document['objectname_ss'].join(', ') %>
     <meta property="og:title"     content="<%= doc_presenter.document['objectname_ss'].join(', ') %>" />
   <% end %>
@@ -22,7 +22,7 @@
   <% end %>
   <meta property="og:description" content="<%= maker %> <%= dates %>" />
   <% unless doc_presenter.document['blob_ss'].nil? %>
-    <meta property="og:image"     content="https://d2kpp6rxorzl4e.cloudfront.net/thumbnails/<%= doc_presenter.document['blob_ss'].join('')[0...23] %>.jpg"/>
+    <meta property="og:image"     content="https://d6jfg2a0yiapu.cloudfront.net/thumbnails/<%= doc_presenter.document['blob_ss'].join('')[0...23] %>.jpg"/>
     <meta property="twitter:image:alt" content="Image of <%= doc_title %>"/>
   <% else %>
     <meta property="og:image"     content="https://museumca.org/wp-content/uploads/2022/09/2022_OMCA_LunarNewYear_Entrance_Line_Visitors_Photocredit_ChristineCueto_DSF0560-2.jpg" />

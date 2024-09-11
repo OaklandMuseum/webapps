@@ -248,7 +248,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'dhname_ss', label: 'Scientific name'
     config.add_show_field 'objectproductionperson_ss', label: 'Maker'
     config.add_show_field 'objectproductiondate_ss', label: 'Date made'
-    config.add_show_field 'argusdescription_s', label: 'Material / Technique'
+    config.add_show_field 'argusdescription_s', label: 'Material/Technique'
     # config.add_show_field 'material_ss', label: 'Material'
     config.add_show_field 'dimensionsummary_s', label: 'Dimensions'
     # config.add_show_field 'measuredpart_ss', label: 'Measured part'

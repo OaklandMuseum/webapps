@@ -117,7 +117,7 @@ module ApplicationHelper
   end
 
   def render_csid csid, derivative
-    "https://d2kpp6rxorzl4e.cloudfront.net/thumbnails/#{csid}.jpg"
+    "https://d6jfg2a0yiapu.cloudfront.net/thumbnails/#{csid}.jpg"
     # "/blobs/#{csid}/derivatives/#{derivative}/content"
   end
 
