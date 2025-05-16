@@ -58,7 +58,7 @@ field	45	acquisitionreferencenumber	Acquisition Reference Number	acquisitionrefe
 field	46	accessiondate	Accession Date	accessiondate_s			string	2,3				34			42	x
 field	47	accdate_begin	Accession Date (earliest)	accdate_begin_s		x	date									x
 field	48	accdate_end	Accession Date (latest)	accdate_end_s		x	date									x
-field	49	creditline	Credit Line	creditline_ss			keyword	3,3				27			43	x
+field	49	creditline	Credit Line	creditline_s			keyword	3,3				27			43	x
 field	50	loaninnumber	Loan In Number	loaninnumber_ss			keyword	4,3				35			44	x
 field	51	loaninstatus	Loan In Status	loaninstatus_ss		x	dropdown	5,3				36			45	x
 field	52	loaninreturndate	Loan In Return Date	loaninreturndate_ss			string	7,3				41			50	x

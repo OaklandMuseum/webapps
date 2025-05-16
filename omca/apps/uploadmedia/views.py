@@ -98,24 +98,6 @@ def prepareFiles(request, BMUoptions, context):
                 else:
                     imageinfo[option] = ''
 
-            if 'handling' in request.POST:
-                handling = request.POST['handling']
-                for parms in BMUoptions['bmuconstants'][handling]:
-                    imageinfo[parms] = BMUoptions['bmuconstants'][handling][parms]
-
-                # special case:
-                # borndigital media have their mh id numbers unconditionally replaced with a sequence number
-                if imageinfo['handling'] == 'borndigital':
-                    # for these, we create a media handling number...
-                    # options considered were:
-                    # DP-2015-10-08-12-16-43-0001 length: 27
-                    # DP-201510081216430001 length: 21
-                    # DP-2CBE859E990BFB1 length: 18
-                    # DP-2015-10-08-12-16-43-0001 length: 27 the winner! (most legible)
-                    mhnumber = jobnumber + ("-%0.4d" % (lineno + 1))
-                    #mhnumber = hex(int(mhnumber.replace('-','')))[2:]
-                    imageinfo['objectnumber'] = 'DP-' + mhnumber
-
             specialhandling(imageinfo, context, BMUoptions, INSTITUTION)
             images.append(imageinfo)
 

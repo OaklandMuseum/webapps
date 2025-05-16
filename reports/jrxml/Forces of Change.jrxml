@@ -78,9 +78,11 @@
         FROM relations_common rmed
         LEFT OUTER JOIN hierarchy hmed ON (hmed.name = rmed.objectcsid)
         LEFT OUTER JOIN media_common med ON (hmed.id = med.id)
+        LEFT OUTER JOIN media_omca momca ON (med.id = momca.id)
         LEFT OUTER JOIN misc ON (misc.id = med.id)
         LEFT OUTER JOIN collectionspace_core cc ON (cc.id = med.id)
 	WHERE h2.name = rmed.subjectcsid AND rmed.objectdocumenttype = 'Media' AND misc.lifecyclestate <> 'deleted'
+        ORDER BY momca.isprimary DESC, med.identificationNumber DESC
         ORDER BY cc.updatedat DESC
 	LIMIT 1
     ) AS blobCSID

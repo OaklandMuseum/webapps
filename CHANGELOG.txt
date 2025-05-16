@@ -3,10 +3,32 @@ CHANGELOG for webapps
 OK, it is not a *real* change log, but a list of changes resulting from git log
 sometimes with some human annotation after the fact.
 
-This is version blacklight-1.0.1
-Sat Sep  7 09:31:46 PDT 2024
+This is version webapps-6.1.6-rc2
+Mon Dec 30 21:48:46 PST 2024
 
-8b3884c (HEAD -> main, tag: webapps-6.1.4, origin/main, origin/HEAD) revise CHANGELOG.txt and bump version to webapps-6.1.4
+933e2d0 (HEAD -> main) modest improvements to handling of hi-res images in Solr
+ffd0d3d another stab at layout for the 'hi-res downloads'
+39acf36 (tag: webapps-6.1.6-rc1, origin/main, origin/HEAD) revise CHANGELOG.txt and bump version to webapps-6.1.6-rc1
+88d07be (tag: blacklight-1.0.2-rc3) revise CHANGELOG.txt and bump version to blacklight-1.0.2-rc3
+0e9c7f8 render 'externalurl' (hires images) in blacklight
+9d626f6 create and insert 'externalurl_s' field in Solr
+26e0821 revise google tag manager code in blacklight
+d59b5a4 (tag: blacklight-1.0.2-rc2) revise CHANGELOG.txt and bump version to blacklight-1.0.2-rc2
+6531f34 fix spelling of Contributor name in BMU
+332ed42 add Production organization, tweak Show display spacing in Blacklight
+5e8fd2a (tag: blacklight-1.0.2-rc1) revise CHANGELOG.txt and bump version to blacklight-1.0.2-rc1
+25e5c66 (tag: webapps-6.1.5) revise CHANGELOG.txt and bump version to webapps-6.1.5
+afb561e (tag: webapps-6.1.5-rc1) revise CHANGELOG.txt and bump version to webapps-6.1.5-rc1
+232f766 bmu now sets isPrimary for uploaded media
+bee1e86 update bmu 'contributors' dropdown
+bfad05e run netx sync at 9pm, i.e. before solr refresh
+a5f2d7e repair NetX extract: some field offsets were incorrect
+d8b0a42 fix bug in 'more works by' rendering in blacklight
+28dae63 correct and bulletproof data shown in mailto: link on blacklight show display
+d04f1b9 'Material / Technique' > 'Material/Technique' in blacklight labels
+76e5977 google analytics GA4 no longer requires user code to call the tag function
+f1aff29 (tag: blacklight-1.0.1) revise CHANGELOG.txt and bump version to blacklight-1.0.1
+8b3884c (tag: webapps-6.1.4) revise CHANGELOG.txt and bump version to webapps-6.1.4
 f149c65 (tag: webapps-6.1.4-rc1) revise CHANGELOG.txt and bump version to webapps-6.1.4-rc1
 c1434cc (tag: blacklight-1.0.1-rc2) revise CHANGELOG.txt and bump version to blacklight-1.0.1-rc2
 854083e adding a useful helper script for Solr

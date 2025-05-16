@@ -52,3 +52,6 @@ echo "Or just restart Apache"
 cd ~/projects/${RUN_DIR}/portal/
 rake restart
 
+# reset repo to main branch
+cd ${REPO}
+git checkout main

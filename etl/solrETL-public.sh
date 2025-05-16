@@ -90,7 +90,7 @@ do
   time awk -v NUMCOLS=$NUMCOLS '{ FS = "\t" ; if (NF != 0+NUMCOLS) print }' ${CORE}.csv | perl -pe 's/\\/\//g' > errors.${CORE}.csv &
   wait
   # merge media and metadata files (done in perl ... very complicated to do in SQL)
-  time perl mergeObjectsAndMedia.pl 4solr.${TENANT}.media.csv 4solr.${TENANT}.base.${CORE}.csv > d6.csv
+  time perl mergeObjectsAndMedia.pl 4solr.${TENANT}.media.csv 4solr.${TENANT}.base.${CORE}.csv hires_objectnumbers.csv "https://d6jfg2a0yiapu.cloudfront.net/hires"  > d6.csv
   # recover the solr header and put it back at the top of the file
   grep csid d6.csv > header4Solr.csv
   # generate solr schema <copyField> elements, just in case.

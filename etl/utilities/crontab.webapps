@@ -16,7 +16,11 @@
 ##################################################################################
 10 00 * * * cd /home/webapps/solr-pipelines ; /home/webapps/solr-pipelines/solrETL-public.sh omca >> /var/log/django/omca/solr_extract_public.log  2>&1 ; /home/webapps/checkstatus.sh -v > /var/www/html/solr.txt 2>&1
 ###################################################################################
-# run S3 image sync and 10 minutes after 3am (i.e. after bmu and solr refresh)
+# update hires image list before midnight (i.e. before solr refresh)
+##################################################################################
+59 23 * * * cd /home/webapps/solr-pipelines ; ./hires_update.sh hires_objectnumbers.csv
+###################################################################################
+# run S3 image sync at 10 minutes after 3am (i.e. after bmu and solr refresh)
 ##################################################################################
 10 03 * * * cd /home/webapps/solr-pipelines ; /home/webapps/solr-pipelines/s3_update.sh >> /var/log/django/omca/s3_update.log
 ###################################################################################
@@ -29,9 +33,9 @@
 ##################################################################################
 01 04 * * * /home/webapps/webapps/etc/cleanBMUtempdir.sh /home/webapps/bmu >> /home/webapps/bmu_cleanup.log
 ###################################################################################
-# run data source sync nightly at one minute after 3am
+# run data source sync nightly at one minute after 9pm
 ###################################################################################
-01 03 * * * /home/webapps/webapps/etc/dss2022/extract_and_reload_db.sh > /var/www/html/dss2022refresh.txt 2>&1
+01 21 * * * /home/webapps/webapps/etc/dss2022/extract_and_reload_db.sh > /var/www/html/dss2022refresh.txt 2>&1
 ###################################################################################
 ## run BMU batch jobs (current this runs nightly at one minute after 10pm)
 ###################################################################################

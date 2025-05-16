@@ -83,7 +83,7 @@
         LEFT OUTER JOIN media_omca momca ON (med.id = momca.id)
         LEFT OUTER JOIN misc ON (misc.id = med.id)
         WHERE h2.name = rmed.subjectcsid AND rmed.objectdocumenttype = 'Media' AND momca.isPrimary = 'True' AND misc.lifecyclestate <> 'deleted'
-        ORDER BY med.identificationNumber DESC
+        ORDER BY momca.isprimary DESC, med.identificationNumber DESC
         LIMIT 1
     ) AS blobCSID
 
@@ -116,10 +116,10 @@ FROM collectionobjects_common co
     INNER JOIN collectionspace_core core ON (core.id = co.id)
     INNER JOIN collectionobjects_omca comca ON (co.id = comca.id)
 
-WHERE core.tenantid=$P{tenantid} and comca.computedcurrentlocationdisplay IN ('M.HPG.2.1.1', 'M.HPG.2.1.2', 'M.HPG.2.1.3', 'M.HPG.2.1.4', 'M.HPG.2.10.1', 'M.HPG.2.10.2', 'M.HPG.2.11.1', 'M.HPG.2.2.1.a', 'M.HPG.2.2.1.b', 'M.HPG.2.2.1.c', 'M.HPG.2.2.1.d', 'M.HPG.2.2.1.e', 'M.HPG.2.2.1.f', 'M.HPG.2.2.1.g', 'M.HPG.2.2.1.h', 'M.HPG.2.2.1.i', 'M.HPG.2.2.1.j', 'M.HPG.2.2.1.k', 'M.HPG.2.2.1.l', 'M.HPG.2.2.1.m', 'M.HPG.2.2.1.n', 'M.HPG.2.4.1', 'M.HPG.2.4.2', 'M.HPG.2.4.3', 'M.HPG.2.5.1', 'M.HPG.2.5.2', 'M.HPG.2.5.3', 'M.HPG.2.6.1', 'M.HPG.2.6.2', 'M.HPG.2.7.1', 'M.HPG.2.7.2', 'M.HPG.2.7.3', 'M.HPG.2.7.5', 'M.HPG.2.7.6', 'M.HPG.2.8.1', 'M.HPG.2.8.2', 'M.HPG.2.9.1', 'M.HPG.2.9.2')
+WHERE comca.computedcurrentlocationdisplay IN ('M.HPG.2.1.1', 'M.HPG.2.1.2', 'M.HPG.2.1.3', 'M.HPG.2.1.4', 'M.HPG.2.10.1', 'M.HPG.2.10.2', 'M.HPG.2.11.1', 'M.HPG.2.2.1.a', 'M.HPG.2.2.1.b', 'M.HPG.2.2.1.c', 'M.HPG.2.2.1.d', 'M.HPG.2.2.1.e', 'M.HPG.2.2.1.f', 'M.HPG.2.2.1.g', 'M.HPG.2.2.1.h', 'M.HPG.2.2.1.i', 'M.HPG.2.2.1.j', 'M.HPG.2.2.1.k', 'M.HPG.2.2.1.l', 'M.HPG.2.2.1.m', 'M.HPG.2.2.1.n', 'M.HPG.2.4.1', 'M.HPG.2.4.2', 'M.HPG.2.4.3', 'M.HPG.2.5.1', 'M.HPG.2.5.2', 'M.HPG.2.5.3', 'M.HPG.2.6.1', 'M.HPG.2.6.2', 'M.HPG.2.7.1', 'M.HPG.2.7.2', 'M.HPG.2.7.3', 'M.HPG.2.7.5', 'M.HPG.2.7.6', 'M.HPG.2.8.1', 'M.HPG.2.8.2', 'M.HPG.2.9.1', 'M.HPG.2.9.2')
 
 GROUP BY comca.computedcurrentlocationdisplay, objectnumber, objectid, sortableobjectnumber, h3.name, materialtechniquesummary, physicaldescription, contentdescription, curatorialremarks, h2.name
-ORDER BY lsort1, lsort2, lsort3;]]>
+ORDER BY lsort1, lsort2, lsort3, comca.sortableobjectnumber;]]>
 	</queryString>
 	<field name="objectnumber" class="java.lang.String"/>
 	<field name="materialtechniquesummary" class="java.lang.String">

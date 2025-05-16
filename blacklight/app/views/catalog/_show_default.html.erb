@@ -24,7 +24,7 @@
       <% unless field_name == "blob_ss" %>
         <% if should_render_show_field? document, field %>
           <div class="show-field-container">
-            <span class="field-label blacklight-<%= field_name.parameterize %>"><%= render_document_show_field_label document, field: field_name %></span>
+            <div class="field-label blacklight-<%= field_name.parameterize %>"><%= render_document_show_field_label document, field: field_name %></div>
             <% if field_name == 'objectproductionperson_ss'%>
                 <% _artist = doc_presenter.field_value field %>
                 <% _artist_links = make_artist_search_links(_artist) %>
@@ -38,9 +38,16 @@
        <% end %>
       <% end %>
     <% end %>
-    <% if doc_presenter.document['nagprastatement_s'] %>
+    <% if doc_presenter.document['externalurl_s'] %>
       <div class="mt-4">
+        <% _externalurl_s = doc_presenter.document['externalurl_s'] %>
+        <a href="<%= _externalurl_s %>" target="_new">View or download a high resolution image</a>,
+        made possible by a grant from the National Endowment for the Arts.
+      </div>
+    <% end %>
+    <% if doc_presenter.document['nagprastatement_s'] %>
       <% _nagprastatement_s = doc_presenter.document['nagprastatement_s'] %>
+      <div class="mt-4">
         <b><i><%= raw _nagprastatement_s %></i></b>
       </div>
     <% end %>
@@ -53,7 +60,7 @@
       </div>
     <% end %>
   </div>
-  <div id="feedback" class="col-sm-12 col-md-11">
+  <div id="feedback" class="col-sm-12 col-md-11 feedback">
     <% _idnumber_s = doc_presenter.document['id'] %>
     <% _objectnumber_s = doc_presenter.document['objectnumber_s'] %>
     <% _objectname_ss = '' %>

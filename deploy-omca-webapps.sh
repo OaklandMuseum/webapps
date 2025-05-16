@@ -22,3 +22,7 @@ YYYYMMDDHHMM=`date +%Y%m%d%H%M`
 mv solr-pipelines ${YYYYMMDDHHMM}.solr-pipelines
 cp -r ~/webapps/etl ~/solr-pipelines
 cp ~/webapps/etl/utilities/checkstatus.sh ~
+
+# reset repo to main branch
+cd ~/webapps
+git checkout main

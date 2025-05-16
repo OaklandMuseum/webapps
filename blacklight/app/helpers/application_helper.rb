@@ -84,7 +84,8 @@ module ApplicationHelper
 
       formatted_documents = content_tag(:div, formatted_documents, class: 'show-preview')
       heading = content_tag(:div, class: 'show-preview-heading') do
-        content_tag(:p, "More Works by #{artist}")
+        content_tag(:hr) +
+        content_tag(:p, "More Works by " + CGI.unescapeHTML(artist))
       end
       return heading + formatted_documents
     end

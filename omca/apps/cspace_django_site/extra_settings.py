@@ -26,16 +26,16 @@ ALLOWED_HOSTS = ['*']
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROJECT_NAME = os.path.basename(BASE_DIR)
 
-CACHES = {
-    'default': {
-        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
-        'LOCATION': '/var/cache/imageserver',
-        'CULL_FREQUENCY': 3,
-        'OPTIONS': {
-            'MAX_ENTRIES': 150000
-        }
-    }
-}
+# CACHES = {
+#     'default': {
+#         'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+#         'LOCATION': '/var/cache/imageserver',
+#         'CULL_FREQUENCY': 3,
+#         'OPTIONS': {
+#             'MAX_ENTRIES': 150000
+#         }
+#     }
+# }
 
 # 8 rotating logs, 32MB each, named '<museum>.webapps.log.txt', only INFO or higher
 # emailing of ERROR level messages deferred for now: we'd need to configure all that

@@ -213,6 +213,11 @@ if [[ "${COMMAND}" = "deploy" ]]; then
   echo "configuration files in config/ (these are .cfg, .json, and .csv files mostly)"
   echo "*************************************************************************************************"
   echo
+
+  # reset repo to main branch
+  cd ${CONFIGDIR}
+  git checkout main
+
 elif [[ "${COMMAND}" = "disable" ]]; then
   perl -i -pe "s/('${WEBAPP}')/# \1/" cspace_django_site/installed_apps.py
   perl -i -pe "s/(path)/# \1/ if /${WEBAPP}/" cspace_django_site/urls.py

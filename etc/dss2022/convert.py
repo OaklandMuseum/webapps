@@ -7,6 +7,8 @@ import csv
 import sys
 import re
 
+# map columns in input (4solr file) to columns in output file
+# concatenating a few as needed
 concatenate_cols = [
     [0],
     [1],
@@ -30,6 +32,7 @@ concatenate_cols = [
     [7]               # 19
 ]
 
+# this is how the input columns are mapped to output columns
 """
      0	objectname_s
      1	objectnumber_s
@@ -54,7 +57,7 @@ concatenate_cols = [
 """
 
 # list of single-valued fields in the output, used so we don't encapsulate them
-single_valued = [0, 1, 2, 3, 4, 10, 13, 17, 19]
+single_valued = [1, 2, 3, 4, 10, 13, 17, 19]
 
 txt_file = sys.argv[1]
 csv_file = sys.argv[2]
@@ -77,6 +80,9 @@ with open(txt_file, "r") as in_text:
         for row in in_reader:
             output_row = []
             for i, cols in enumerate(concatenate_cols):
+                # truncate exhibition histories on semicolon
+                if cols[0] == 22:
+                    row[cols[0]] = row[cols[0]].split(';')[0]
                 if i in single_valued:
                     output_row.append(' '.join([row[c] for c in cols if row[c] != '']))
                 else:

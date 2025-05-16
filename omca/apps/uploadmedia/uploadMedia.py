@@ -43,7 +43,7 @@ media_payload = """<?xml version="1.0" encoding="UTF-8"?>
 </ns2:media_common>
 <ns2:media_INSTITUTION xmlns:ns2="http://collectionspace.org/services/media/local/INSTITUTION" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 <approvedForWeb>{approvedforweb}</approvedForWeb>
-<primaryDisplay>false</primaryDisplay>
+<primaryDisplay>{handling}</primaryDisplay>
 #OMCAINFO#
 #IMAGENUMBERELEMENT#
 #LOCALITY#
@@ -106,12 +106,15 @@ def makePayload(payload, mh, institution):
 
     elif institution == 'omca':
         # xxx = re.sub(r"^urn:.*'(.*)'", r'\1', xxx)
-        # make up an idenfication number "BMUYYYYMMMDDDHHMMSS"
+        # make up an identification number "BMUYYYYMMMDDDHHMMSS"
         locdate = datetime.datetime.utcnow().strftime("%Y%m%d%H%M%S")
         mh['referencenumber'] = 'BMU' + locdate
         payload = re.sub('<identificationNumber>.*</identificationNumber>', '<identificationNumber>%s</identificationNumber>' % mh['referencenumber'], payload)
         # zap the title field
         payload = re.sub('<title>.*</title>', '<title></title>', payload)
+        # set isPrimary, if needed.
+        payload = payload.replace('<primaryDisplay>on</primaryDisplay>','<isPrimary>true</isPrimary>')
+        payload = payload.replace('<primaryDisplay></primaryDisplay>','<isPrimary>false</isPrimary>')
         # somehow, this strange name seems to be used...
         payload = payload.replace('<approvedForWeb>true</approvedForWeb>','<approveForPublic>true</approveForPublic>')
         payload = payload.replace('<approvedForWeb>false</approvedForWeb>','<approveForPublic>false</approveForPublic>')

@@ -169,7 +169,7 @@ def getBMUoptions():
                 if not constants in FIELDS2WRITE:
                     FIELDS2WRITE.append(constants)
     else:
-        loginfo('bmu',"No BMU options are not enabled. No defaults or special handling of media.", {}, {})
+        loginfo('bmu',"No BMU options are enabled. No defaults or special handling of media.", {}, {})
 
     try:
         overrides = config.get('info', 'overrides')
